@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "foodluck"
+version = "0.2.0"
+description = "食运 FoodLuck — 用筛选和随机抽签决定下一餐的桌面应用"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "FoodLuck" }]
+dependencies = ["PySide6>=6.6,<7"]
+
+[project.gui-scripts]
+foodluck = "foodluck.app:main"
+
+[project.urls]
+Homepage = "https://github.com/heyhey666567/foodluck"
+Repository = "https://github.com/heyhey666567/foodluck"
+Releases = "https://github.com/heyhey666567/foodluck/releases"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["foodluck*"]
+
+[tool.setuptools.package-data]
+"foodluck.ui" = ["assets/*.svg"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
